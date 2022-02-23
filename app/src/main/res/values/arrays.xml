@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_of_note">
+        <item>Note 1</item>
+        <item>Note 2</item>
+        <item>Note 3</item>
+        <item>Note 4</item>
+        <item>Note 5</item>
+        <item>Note 6</item>
+        <item>Note 7</item>
+    </string-array>
+
+    <string-array name="the_note">
+        <item>Note 1</item>
+        <item>Note 12</item>
+        <item>Note 123</item>
+        <item>Note 134</item>
+        <item>Note 12345</item>
+        <item>Note 123456</item>
+        <item>Note 1234567</item>
+    </string-array>
+
+    <string-array name="list_of_select">
+        <item>Note Fragment</item>
+        <item>Setting Fragment</item>
+        <item>About Fragment</item>
+    </string-array>
+</resources>
