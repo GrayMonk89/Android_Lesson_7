@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         if(savedInstanceState == null){
             Select_Fragment selectFragment = Select_Fragment.newInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.list_of_note, selectFragment);
+            getSupportFragmentManager().beginTransaction().replace(R.id.list_of_note, selectFragment).commit();
         }
     }
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -29,5 +30,29 @@ public class Select_Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        String[] listOfSelect = getResources().getStringArray(R.array.list_of_select);
+        int i = 0;
+        for(String nameOfSelect : listOfSelect){
+            TextView textView = new TextView(requireContext());
+            textView.setTextSize(30);
+            textView.setText(nameOfSelect);
+            textView.setId(1000 + i);
+            ((LinearLayout)view).addView(textView);
+            i++;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    switch (view.getId()){
+                        case (1000):{
+                            NoteListFragment noteListFragment = NoteListFragment.newInstance();
+                            requireActivity().getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.list_of_note, noteListFragment).addToBackStack("").commit();
+
+                            break;
+                        }
+                    }
+                }
+            });
+        }
     }
 }
