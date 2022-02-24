@@ -45,9 +45,17 @@ public class Select_Fragment extends Fragment {
                     switch (view.getId()){
                         case (1000):{
                             NoteListFragment noteListFragment = NoteListFragment.newInstance();
-                            requireActivity().getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.list_of_note, noteListFragment).addToBackStack("").commit();
-
+                            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.list_of_note, noteListFragment).addToBackStack("").commit();
+                            break;
+                        }
+                        case (1001): {
+                            SettingFragment settingFragment = SettingFragment.newInstance();
+                            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.list_of_note, settingFragment).addToBackStack("").commit();
+                            break;
+                        }
+                        case (1002): {
+                            AboutFragment aboutFragment = AboutFragment.newInstance();
+                            requireActivity().getSupportFragmentManager().beginTransaction().add(R.id.list_of_note, aboutFragment).addToBackStack("").commit();
                             break;
                         }
                     }
