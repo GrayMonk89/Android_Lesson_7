@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Android_Lesson_7</string>
     <string name="about">The best app ever!=)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tittle">Tittle</string>
+    <string name="note_text">Note text</string>
 </resources>

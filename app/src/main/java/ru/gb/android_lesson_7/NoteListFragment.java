@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.google.android.material.button.MaterialButton;
 
 public class NoteListFragment extends Fragment {
     public static final String CURRENT_NOTE = "current_note";
@@ -87,6 +90,21 @@ public class NoteListFragment extends Fragment {
                 }
             });
         }
+        Button newNoteButton = new MaterialButton(requireContext());
+        newNoteButton.setText("New note");
+        newNoteButton.setTextSize(30);
+        ((LinearLayout)view).addView(newNoteButton);
+        newNoteButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                    NewNoteFragment newNoteFragment = NewNoteFragment.newInstance();
+                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.the_note, newNoteFragment).addToBackStack("").commit();
+                }else{
+                    NewNoteFragment newNoteFragment = NewNoteFragment.newInstance();
+                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.list_of_note, newNoteFragment).addToBackStack("").commit();
+                }
+            }
+        });
     }
-
 }
